@@ -6,7 +6,7 @@
 /*   By: mbraiban <mbraiban@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 13:04:17 by mbraiban          #+#    #+#             */
-/*   Updated: 2023/10/17 13:22:50 by mbraiban         ###   ########.fr       */
+/*   Updated: 2023/10/17 13:37:18 by mbraiban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_clognl(t_colors color, char *str)
 	printf("%s%s%s\n", ft_getcolor(color), str, ft_getcolor(RESET));
 }
 
-char* ft_getcolor(t_colors color)
+char	*ft_getcolor(t_colors color)
 {
 	if (color == RED)
 	{
