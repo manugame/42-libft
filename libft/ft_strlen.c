@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libtester.h                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraiban <mbraiban@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 12:45:17 by mbraiban          #+#    #+#             */
-/*   Updated: 2023/10/18 20:13:41 by mbraiban         ###   ########.fr       */
+/*   Created: 2023/10/17 12:02:26 by mbraiban          #+#    #+#             */
+/*   Updated: 2023/10/18 20:15:54 by mbraiban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBTESTER_H
-# define LIBTESTER_H
+#include "libft.h"
 
-void	ft_test_func1(int input, int expt_return, int (*func)(int));
+int	ft_strlen(const char *str)
+{
+	int	counter;
 
-void	ft_test_funcstr(char *input, int expt_return, int (*func)(const char*));
-
-#endif
+	counter = 0;
+	while (str && str[counter])
+		counter++;
+	return (counter);
+}

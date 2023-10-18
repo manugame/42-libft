@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libtester.h                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraiban <mbraiban@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 12:45:17 by mbraiban          #+#    #+#             */
-/*   Updated: 2023/10/18 20:13:41 by mbraiban         ###   ########.fr       */
+/*   Created: 2023/10/17 12:02:26 by mbraiban          #+#    #+#             */
+/*   Updated: 2023/10/18 19:37:55 by mbraiban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBTESTER_H
-# define LIBTESTER_H
+#include "libft.h"
 
-void	ft_test_func1(int input, int expt_return, int (*func)(int));
-
-void	ft_test_funcstr(char *input, int expt_return, int (*func)(const char*));
-
-#endif
+int	ft_isdigit(int c)
+{
+	return (c >= '0' && c <= '9');
+}
