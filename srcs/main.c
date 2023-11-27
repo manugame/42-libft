@@ -6,7 +6,7 @@
 /*   By: mbraiban <mbraiban@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 12:11:03 by mbraiban          #+#    #+#             */
-/*   Updated: 2023/10/18 20:30:40 by mbraiban         ###   ########.fr       */
+/*   Updated: 2023/11/27 17:11:34 by mbraiban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,80 @@ void	ft_strlen_test(void)
 void	ft_memset_test(void)
 {
 	ft_lognl("testing memset");
-	int	*ptr = malloc(5);
-	printf("%p \n", ft_memset(ptr, 5, 0));
+	int	*ptr = malloc(sizeof(int) * 5);
+	printf("%p \n", ft_memset(ptr, 5, 5));
+
+	ft_bzero(ptr, 5);
+}
+
+void	ft_memcpy_test(void)
+{
+	ft_lognl("testing memcpy");
+	char	*ptr = malloc(sizeof(char) * 5);
+	char	*dest = malloc(sizeof(char) * 5);
+
+	int counter = 0;
+	while (counter < 5)
+	{
+		ptr[counter] = counter + '\0';
+		counter++;
+	}
+
+	ft_memcpy(dest, ptr, 5);
+
+	counter = 0;
+	while (counter < 5)
+	{
+		printf("%d \n", ptr[counter]);
+		counter++;
+	}
+
+}
+
+void	ft_memmove_test(void)
+{
+		ft_lognl("testing memmove");
+	char	*ptr = malloc(sizeof(char) * 5);
+	char	*dest = malloc(sizeof(char) * 5);
+
+	int counter = 0;
+	while (counter < 5)
+	{
+		ptr[counter] = counter + '\0';
+		counter++;
+	}
+
+	ft_memmove(dest, ptr, 5);
+
+	counter = 0;
+	while (counter < 5)
+	{
+		printf("%d \n", ptr[counter]);
+		counter++;
+	}
+}
+
+void	ft_strlcpy_test()
+{
+	ft_lognl("testing strlcpy");
+	char	*dst = malloc(sizeof(char) * 5);
+
+	ft_strlcpy(dst, "test", 3);
+
+	printf("%s \n", dst);
+}
+
+void	ft_strchr_test(void)
+{
+	ft_lognl("testing strchr ans strrchr");
+
+	char *found = ft_strchr("je suis le goat le vrai", 'l');
+
+	printf("%s \n", found);
+
+	char *found2 = ft_strrchr("je suis le goat le vrai", 'l');
+
+	printf("%s \n", found2);
 }
 
 int	main(int argc, char *argv[])
@@ -45,5 +117,9 @@ int	main(int argc, char *argv[])
 	ft_isalpha_test();
 	ft_strlen_test();
 	ft_memset_test();
+	ft_memcpy_test();
+	ft_memmove_test();
+	ft_strlcpy_test();
+	ft_strchr_test();
 	return (0);
 }

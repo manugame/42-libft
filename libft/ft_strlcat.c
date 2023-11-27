@@ -1,29 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraiban <mbraiban@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 20:21:25 by mbraiban          #+#    #+#             */
-/*   Updated: 2023/11/09 13:40:14 by mbraiban         ###   ########.fr       */
+/*   Created: 2023/11/27 16:46:47 by mbraiban          #+#    #+#             */
+/*   Updated: 2023/11/27 16:47:05 by mbraiban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *pointer, int value, int count)
+int	ft_strlcat(char *dst, const char *src, int size)
 {
-	int		counter;
-	char	*ptr;
-
-	if (!pointer || count <= 0)
-		return (0);
-	ptr = pointer;
-	counter = 0;
-	while (counter < count)
-	{
-		*ptr = (unsigned char)value;
-		ptr++;
-		counter++;
-	}
-	return (pointer);
+	
 }

@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraiban <mbraiban@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 20:21:25 by mbraiban          #+#    #+#             */
-/*   Updated: 2023/11/09 13:40:14 by mbraiban         ###   ########.fr       */
+/*   Created: 2023/11/27 16:59:21 by mbraiban          #+#    #+#             */
+/*   Updated: 2023/11/27 16:59:37 by mbraiban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *pointer, int value, int count)
-{
-	int		counter;
-	char	*ptr;
+#include "libft.h"
 
-	if (!pointer || count <= 0)
-		return (0);
-	ptr = pointer;
-	counter = 0;
-	while (counter < count)
-	{
-		*ptr = (unsigned char)value;
-		ptr++;
-		counter++;
-	}
-	return (pointer);
+int	ft_tolower(int c)
+{
+	if (ft_alpha(c) && (c >= 'A' && c <= 'Z'))
+		return (c - 32);
+	else 
+		return (-1);
 }

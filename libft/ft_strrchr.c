@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraiban <mbraiban@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 20:21:25 by mbraiban          #+#    #+#             */
-/*   Updated: 2023/11/09 13:40:14 by mbraiban         ###   ########.fr       */
+/*   Created: 2023/11/27 17:00:38 by mbraiban          #+#    #+#             */
+/*   Updated: 2023/11/27 17:19:03 by mbraiban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *pointer, int value, int count)
-{
-	int		counter;
-	char	*ptr;
+#include "libft.h"
 
-	if (!pointer || count <= 0)
-		return (0);
-	ptr = pointer;
+char	*ft_strrchr(char *str, int tofind)
+{
+	int	counter;
+	int last_found;
+
 	counter = 0;
-	while (counter < count)
+	last_found = 0;
+	while (str[counter])
 	{
-		*ptr = (unsigned char)value;
-		ptr++;
+		if (str[counter] == tofind)
+			last_found = counter;
 		counter++;
 	}
-	return (pointer);
+	return (str + last_found);
 }

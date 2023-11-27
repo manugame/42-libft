@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraiban <mbraiban@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 20:21:25 by mbraiban          #+#    #+#             */
-/*   Updated: 2023/11/09 13:40:14 by mbraiban         ###   ########.fr       */
+/*   Created: 2023/11/09 14:23:43 by mbraiban          #+#    #+#             */
+/*   Updated: 2023/11/27 16:26:54 by mbraiban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *pointer, int value, int count)
-{
-	int		counter;
-	char	*ptr;
+#include "libft.h"
 
-	if (!pointer || count <= 0)
+void	*ft_memmove(void *dst, const void *src, unsigned int size)
+{
+	unsigned int	counter;
+
+	if (!dst || !src || size <= 0)
 		return (0);
-	ptr = pointer;
-	counter = 0;
-	while (counter < count)
+	counter = size;
+	while (counter > 0)
 	{
-		*ptr = (unsigned char)value;
-		ptr++;
-		counter++;
+		((unsigned char *)dst)[counter] = ((unsigned char *)src)[counter];
+		counter--;
 	}
-	return (pointer);
+	return (dst);
 }
